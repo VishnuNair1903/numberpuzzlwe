@@ -1,0 +1,117 @@
+:root{
+  --size: 100px;
+  --tile:#342956;
+  --correct:#6e50b4;
+}
+
+html,body{
+  background: lightgoldenrodyellow;
+  margin: 0;
+  padding:0;
+
+}
+
+.App{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Pacifico', cursive;
+}
+
+.App*{font-family: 'Pacifico', cursive;}
+
+.Board{
+  border: 10px solid darkgoldenrod;
+  pointer-events: none;
+  z-index: 20;
+
+}
+
+.game{
+  position: relative;
+
+}
+
+.Board1{
+  display: grid;
+  grid-template-columns: repeat(4, var(--size));
+  grid-template-rows: repeat(4, var(--size));
+  border: 5px solid darkgoldenrod;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.number{
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: var(--tile);
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+}
+
+.number.disabled{
+  pointer-events: none;
+  background-color: transparent;
+}
+
+.number.slot--0{left: 0; top: 0;}
+.number.slot--1{left:var(--size); top: 0;}
+.number.slot--2{left:calc(var(--size) * 2); top: 0;}
+.number.slot--3{left:calc(var(--size)*3);top: 0;}
+.number.slot--4{left:0;top: var(--size);}
+.number.slot--5{left:calc(var(--size));top: var(--size);}
+.number.slot--6{left:calc(var(--size)*2);top: var(--size);}
+.number.slot--7{left:calc(var(--size)*3);top: var(--size);}
+.number.slot--8{left:0;top: calc(var(--size)*2);}
+.number.slot--9{left:var(--size);top: calc(var(--size)*2);}
+.number.slot--10{left:calc(var(--size)*2);top: calc(var(--size)*2);}
+.number.slot--11{left:calc(var(--size)*3);top: calc(var(--size)*2);}
+.number.slot--12{left:0;top: calc(var(--size)*3);}
+.number.slot--13{left:calc(var(--size));top: calc(var(--size)*3);}
+.number.slot--14{left:calc(var(--size)*2);top: calc(var(--size)*3);}
+.number.slot--15{left:calc(var(--size)*3);top: calc(var(--size)*3);}
+
+.number.correct{
+  background-color: var(--correct);
+}
+
+.winner{
+  position: absolute;
+  background-color: var(--tile);
+  border-radius: 10px;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 100;
+
+
+}
+
+.newgame{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+button{
+  border: 0 transparent;
+  background-color: darkgoldenrod;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
